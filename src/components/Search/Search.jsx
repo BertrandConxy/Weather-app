@@ -24,7 +24,7 @@ const Search = ({ onSearchChange }) => {
         }),
       }
     } catch (e) {
-      console.log(e)
+      alert(e)
     }
   }
 
