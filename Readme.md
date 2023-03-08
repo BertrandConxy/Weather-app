@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/Questapp-blue)
+![](https://img.shields.io/badge/WeatherApp-blue)
 
 # Weather app
 
@@ -12,7 +12,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live demo](https://simple-quiz-app42.netlify.app/)
+[Live demo](https://weatherapp666.netlify.app/)
 
 ## Built With
 
