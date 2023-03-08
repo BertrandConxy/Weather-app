@@ -4,7 +4,7 @@
 
 > Weather app is web app that helps users view the current weather in a particular city that they searched. It is built using React js and consumes data from the [openWeather API](https://openweathermap.org/)
 
-<br/>![Screenshot from 2023-03-01 12-09-11](https://user-images.githubusercontent.com/90524466/222110273-0e49db2c-5229-4622-9653-63b500d22e77.png)
+<br/>![image](https://user-images.githubusercontent.com/90222110/223692157-58c3e134-b3d4-4ac6-b9f8-47eb4553a04f.png)
 
 <br/>
 
