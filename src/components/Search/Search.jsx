@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { AsyncPaginate } from 'react-select-async-paginate'
-import { GEO_API_URL, USERNAME } from '../../Data/api'
+import { GEO_API_URL, geoOptions } from '../../Data/api'
 
 const Search = ({ onSearchChange }) => {
   const [search, setSearch] = useState(null)
@@ -8,22 +8,23 @@ const Search = ({ onSearchChange }) => {
     setSearch(searchData)
     onSearchChange(searchData)
   }
-  const loadOptions = async (inputValue) => {
+  const loadOptions = async (inputValue = 'kigali') => {
     try {
       const response = await fetch(
-        `${GEO_API_URL}/searchJSON?q=${inputValue}&maxRows=5&username=${USERNAME}`,
+        `${GEO_API_URL}/city?name=${inputValue}`,
+        geoOptions,
       )
       const result = await response.json()
       return {
-        options: result.geonames.map((city) => {
+        options: result.map((city) => {
           return {
-            label: `${city.name} - ${city.countryName}`,
-            value: `${city.lat} ${city.lng}`,
+            label: `${city.name} - ${city.country}`,
+            value: `${city.latitude} ${city.longitude}`,
           }
         }),
       }
     } catch (e) {
-      alert(e)
+      console.log(e)
     }
   }
 
@@ -32,7 +33,7 @@ const Search = ({ onSearchChange }) => {
       <AsyncPaginate
         className="w-[80%] md:w-[50%] lg:w-[50%] m-auto"
         placeholder="Search for a city..."
-        debounceTimeout={600}
+        debounceTimeout={1000}
         value={search}
         onChange={handleChange}
         loadOptions={loadOptions}
