@@ -1,7 +1,7 @@
 import React from 'react'
 import Search from '../../components/Search/Search'
-import { TiWeatherPartlySunny } from 'react-icons/ti'
-import { Link } from 'react-router-dom'
+import CurrentWeather from '../../components/CurrentWeather/CurrentWeather'
+import Nav from '../../components/Nav/Nav'
 
 const HomePage = () => {
   const handleOnSearchChange = (searchData) => {
@@ -9,15 +9,9 @@ const HomePage = () => {
   }
   return (
     <div>
-      <div>
-        <div className="flex justify-start items-center p-5">
-          <TiWeatherPartlySunny className="text-2xl" />
-          <Link to={'/'} className="text-xl font-medium">
-            Weather app
-          </Link>
-        </div>
-      </div>
+      <Nav />
       <Search onSearchChange={handleOnSearchChange} />
+      <CurrentWeather />
     </div>
   )
 }
