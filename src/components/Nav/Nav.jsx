@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 const Nav = () => {
   return (
     <div>
-      <div className="flex justify-start items-center p-5">
+      <div className="nav flex justify-start items-center p-5">
         <TiWeatherPartlySunny className="text-2xl" />
-        <Link to={'/'} className="text-xl font-medium">
+        <Link to={'/'} className="nav-logo text-xl font-medium">
           Weather app
         </Link>
       </div>
